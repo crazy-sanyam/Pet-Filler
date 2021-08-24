@@ -1,63 +1,82 @@
 import React from 'react'
+import Drinks from './Drinks';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+import Sweets from './Sweets';
+import IndianMasala from './IndianMasala';
+import HomeFood from './HomeFood';
+import FastFoods from './FastFoods';
 
 export default function LeftNav() {
     return (
         <>
-            <div className="leftNav">
+
+
+
+
+
+            <Router>
+                <div className="leftNav">
+
+                    <Switch>
+                        <ul className="list-group">
+                            <li>
+                                <Link to="/Drinks"> <button type="button" class="list-group-item list-group-item-action active" aria-current="true"> Drinks</button></Link>
+                                <Route path="/Drinks">
+                                    <Drinks />
+                                </Route>
+                            </li>
+                            <li>
+                                <Link to="/FastFoods"><button type="button" class="list-group-item list-group-item-action active" aria-current="true"> FastFoods</button></Link>
+                                <Route path="/FastFoods">
+                                    <FastFoods />
+                                </Route>
+                            </li>
+                            <li>
+                                <Link to="/HomeFood" ><button type="button" class="list-group-item list-group-item-action active" aria-current="true"> HomeFood</button></Link>
+                                <Route path="/HomeFood">
+                                    <HomeFood />
+                                </Route>
+                            </li>
+                            <li>
+                                <Link to="/IndianMasala" ><button type="button" class="list-group-item list-group-item-action active" aria-current="true"> Indian Masala</button></Link>
+                                <Route path="/IndianMasala">
+                                    <IndianMasala />
+                                </Route>
+                            </li>
+                            <li>
+                                <Link to="/Sweets"><button type="button" class="list-group-item list-group-item-action active" aria-current="true"> Sweets</button></Link>
+                                <Route path="/Sweets">
+                                    <Sweets />
+                                </Route>
+                            </li>
+                        </ul>
+                    </Switch>
+                </div>
+            </Router>
+
+
+
+
+
+            {/* <div className="leftNav">
                 <ul>
                     <li><b>Drinks</b></li>
-                    <ul>
-                        <li>Tea</li>
-                        <li>Coffee</li>
-                        <li>SoftDrinks</li>
-                        <li>Shakes</li>
-                        <li>wines</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><b>Fast-Food</b></li>
-                    <ul>
-                        <li>Chowmein</li>
-                        <li>Burger</li>
-                        <li>Pizza</li>
-                        <li>Paties</li>
-                        <li>Momos</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><b>Home-Food</b></li>
-                    <ul>
-                        <li>Unlimited-Thali</li>
-                        <li>Special-Thali</li>
-                        <li>Budget-Thali</li>
-                        <li>Chole-Bhatoore</li>
-                        <li>Razma Chawal</li>
-                        <li>Curry Chawal</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><b>Indian Masaala</b></li>
-                    <ul>
-                        <li>Samosaa</li>
-                        <li>Kachori</li>
-                        <li>Dosa-Sambhar</li>
-                        <li>Bhel-Masala</li>
-                        <li>Gol-Gappe</li>
-                        <li>Tikki-Chaat</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><b>Sweets</b></li>
-                    <ul>
-                        <li>Barfi</li>
-                        <li>Rosogolla</li>
-                        <li>Jalebi</li>
-                        <li>Mathura-pede</li>
-                        <li>kheer</li>
-                    </ul>
 
+                    <li><b>Fast-Food</b></li>
+
+                    <li><b>Home-Food</b></li>
+
+                    <li><b>Indian Masaala</b></li>
+
+                    <li><b>Sweets</b></li>
                 </ul>
-            </div>
+            </div> */}
         </>
     )
 }

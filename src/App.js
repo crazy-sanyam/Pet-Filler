@@ -7,10 +7,9 @@ function App() {
   return (
     <>
       <TopNav />
-      <div className="firstClass">
+
         <LeftNav />
         <Body />
-      </div>
     </>
   );
 }
